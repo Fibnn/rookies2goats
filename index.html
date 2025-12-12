@@ -57,51 +57,94 @@
     .links a:hover{opacity:.85}
 
     /* HERO BANNER */
-    .hero{
-      min-height:100vh;
-      display:block;
-      background:
-        linear-gradient(to bottom, rgba(11,18,32,.55), rgba(11,18,32,.35) 35%, rgba(11,18,32,.65)),
-        url("./hero.png");
-      background-size:cover;
-      background-position:center;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
+    /* FULL-BLEED HERO LIKE THE MOCKUP */
+.hero{
+  min-height:100vh;
+  background: url("./hero.png") center/cover no-repeat;
+}
 
-    /* optional: keep content below hero later */
-    .below{
-      max-width:1200px;
-      margin:0 auto;
-      padding:28px 22px 60px;
-      color:var(--muted);
-    }
+/* TOP BAR OVERLAY */
+.topbar{
+  position:absolute;
+  top:0; left:0; right:0;
+  z-index:10;
+  background: rgba(10,16,26,.55);      /* dark overlay like mockup */
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid #b11226;     /* thin red line */
+}
 
-    @media (max-width:900px){
-      header{position:relative;background:rgba(11,18,32,.85);backdrop-filter:blur(10px)}
-      .links{gap:18px}
-      .links a{font-size:16px}
-      .brand img{height:44px}
-      .hero{min-height:65vh}
-    }
+.topbar-inner{
+  position:relative;
+  height: 96px;                         /* gives that tall top band */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display:flex;
+  align-items:center;
+}
+
+/* BIG LOGO TOP-LEFT */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{
+  height: 78px;                         /* make logo big */
+  width:auto;
+  display:block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+}
+
+/* MENU CENTERED (NOT PUSHED RIGHT) */
+.menu{
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  display:flex;
+  gap: 120px;                            /* spacing like mockup */
+  align-items:center;
+}
+
+.menu a{
+  color: #f3e4c7;                         /* gold-ish */
+  text-decoration:none;
+  font-weight:800;
+  font-size: 28px;                        /* larger like mockup */
+  letter-spacing:.6px;
+  text-shadow: 0 10px 22px rgba(0,0,0,.45);
+}
+.menu a:visited{ color:#f3e4c7; }
+.menu a:hover{ opacity:.85; }
+
+/* Smooth anchor scroll + don’t hide sections under header */
+html{ scroll-behavior:smooth; }
+#shop, #breaks, #contact{ scroll-margin-top: 110px; }
+
+/* Mobile: tighten spacing */
+@media (max-width: 900px){
+  .topbar-inner{ height: 78px; }
+  .brand img{ height: 56px; }
+  .menu{ gap: 26px; }
+  .menu a{ font-size: 16px; }
+}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <img src="logo.png" alt="Rookies 2 Goats Logo">
-      </div>
+  <header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#">
+      <img src="Logo.png" alt="Rookies 2 Goats">
+    </a>
 
-      <nav class="links">
-        <a href="#shop">Shop</a>
-        <a href="#breaks">Breaks</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div style="width:56px"></div>
-    </div>
-  </header>
+    <nav class="menu">
+      <a href="#shop">Shop</a>
+      <a href="#breaks">Breaks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <section class="hero"></section>
 
@@ -122,6 +165,7 @@ html{ scroll-behavior:smooth; }
 #shop, #breaks, #contact{
   scroll-margin-top: 120px;
 }
+
 
 
 
