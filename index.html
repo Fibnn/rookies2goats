@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rookies 2 Goats</title>
+  <style>
+    :root{
+      --navy:#0b1220;
+      --red:#b11226;
+      --blue:#1e4fd6;
+      --white:#ffffff;
+      --cream:#f3f0e8;
+      --card:#111a2e;
+      --muted:rgba(255,255,255,.75);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(30,79,214,.25), transparent 60%),
+                  radial-gradient(900px 500px at 80% 30%, rgba(177,18,38,.25), transparent 55%),
+                  var(--navy);
+      color:var(--white);
+    }
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(11,18,32,.8);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:16px 18px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px}
+    .logo{
+      width:42px;height:42px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.15);
+      display:grid;place-items:center;
+      font-size:14px;
+    }
+    .links{display:flex;gap:18px;align-items:center}
+    .links a{
+      color:var(--muted); text-decoration:none; font-weight:600;
+      padding:10px 10px; border-radius:12px;
+    }
+    .links a:hover{color:var(--white); background:rgba(255,255,255,.06)}
+    .cta{
+      background:linear-gradient(90deg, var(--red), var(--blue));
+      color:white; border:none; padding:10px 14px; border-radius:14px;
+      font-weight:800; cursor:pointer;
+    }
+    .hero{
+      padding:54px 0 28px;
+    }
+    .heroGrid{
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:18px;
+      align-items:stretch;
+    }
+    .panel{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:24px;
+      padding:22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height:1.05;
+      letter-spacing:.5px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      line-height:1.5;
+      max-width: 54ch;
+    }
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .badge{
+      padding:10px 12px;border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(255,255,255,.9);
+      font-weight:700; font-size:13px;
+    }
+    .cards{
+      display:grid; grid-template-columns: repeat(3,1fr);
+      gap:14px; margin-top:18px;
+    }
+    .card{
+      background:rgba(17,26,46,.75);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      padding:16px;
+    }
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+    .rightBox{
+      display:flex;flex-direction:column;gap:14px;
+    }
+    .score{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 16px;border-radius:20px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:800;
+    }
+    .score small{display:block;color:var(--muted);font-weight:700}
+    .footer{
+      padding:26px 0 50px;
+      color:rgba(255,255,255,.6);
+      font-size:13px;
+    }
+    @media (max-width: 900px){
+      .heroGrid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .links{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">R2G</div>
+          <div>
+            <div>ROOKIES 2 GOATS</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.65);font-weight:700;">Collecting Greatness</div>
+          </div>
+        </div>
+
+        <div class="links">
+          <a href="#shop">Shop</a>
+          <a href="#breaks">Breaks</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="cta" onclick="document.querySelector('#shop').scrollIntoView({behavior:'smooth'});">
+          View Shop
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap hero">
+    <div class="heroGrid">
+      <section class="panel">
+        <h1>Sports cards.<br/>Big hits.<br/>No fluff.</h1>
+        <p class="sub">
+          A slick, sports-style home for your shop + breaks.
+          Keep it fast, clean, and built for collectors.
+        </p>
+
+        <div class="badges">
+          <div class="badge">🔥 Live Breaks</div>
+          <div class="badge">📦 Fast Shipping</div>
+          <div class="badge">✅ Trusted Packaging</div>
+          <div class="badge">💥 Weekly Drops</div>
+        </div>
+
+        <div class="cards">
+          <div class="card" id="shop">
+            <h3>Shop</h3>
+            <p>Link your eBay/Whatnot store here. Add featured listings later.</p>
+          </div>
+          <div class="card" id="breaks">
+            <h3>Breaks</h3>
+            <p>Post your break schedule + how to claim teams/spots.</p>
+          </div>
+          <div class="card" id="contact">
+            <h3>Contact</h3>
+            <p>Add your email + socials. (Instagram/TikTok/Whatnot)</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="rightBox">
+        <div class="panel">
+          <div class="score">
+            <div>
+              Tonight’s Break
+              <small>8:00 PM PST</small>
+            </div>
+            <div style="color:var(--cream)">LIVE</div>
+          </div>
+          <div style="margin-top:12px;color:var(--muted);line-height:1.5;">
+            Replace this box later with:
+            <b>featured product</b>, <b>recent hits</b>, or a <b>break countdown</b>.
+          </div>
+        </div>
+
+        <div class="panel">
+          <div style="font-weight:900;font-size:18px;margin-bottom:8px;">Quick Links</div>
+          <div style="display:grid;gap:10px;">
+            <a style="color:var(--white);text-decoration:none;background:rgba(255,255,255,.07);padding:12px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);" href="#" onclick="alert('Paste your eBay link here later!')">eBay Store</a>
+            <a style="color:var(--white);text-decoration:none;background:rgba(255,255,255,.07);padding:12px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);" href="#" onclick="alert('Paste your Whatnot link here later!')">Whatnot</a>
+            <a style="color:var(--white);text-decoration:none;background:rgba(255,255,255,.07);padding:12px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);" href="#" onclick="alert('Paste your Instagram link here later!')">Instagram</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> Rookies 2 Goats — Collecting Greatness
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
