@@ -33,7 +33,13 @@
     .nav{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
     }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px}
+    .brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
     .logo{
       width:42px;height:42px;border-radius:12px;
       background:linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
@@ -120,6 +126,11 @@
       .links{display:none}
     }
   </style>
+  .logo-img{
+  height:42px;
+  width:auto;
+  display:block;
+}
 </head>
 
 <body>
@@ -127,7 +138,7 @@
     <div class="wrap">
       <div class="nav">
         <div class="brand">
-          <div class="logo">R2G</div>
+          <img src="logo.png" alt="Rookies 2 Goats Logo" class="logo-img">
           <div>
             <div>ROOKIES 2 GOATS</div>
             <div style="font-size:12px;color:rgba(255,255,255,.65);font-weight:700;">Collecting Greatness</div>
@@ -215,3 +226,4 @@
   </script>
 </body>
 </html>
+
